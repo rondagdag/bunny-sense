@@ -1,0 +1,96 @@
+﻿ringbuf-test.c(67,1): warning : multi-line comment [-Wcomment]
+ringbuf-test.c(67,1): warning :  //#define START_NEW_TEST(test_num) \
+ringbuf-test.c(67,1): warning :  ^
+  
+  
+lcthw\list.h(19,1): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+lcthw\list.h(19,1): warning :  List *List_create();
+lcthw\list.h(19,1): warning :  ^~~~
+lcthw\list.c(6,1): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+lcthw\list.c(6,1): warning :  static ListNode *List_createNode();
+lcthw\list.c(6,1): warning :  ^~~~~~
+lcthw\list.c(8,7): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+lcthw\list.c(8,7): warning :  List *List_create()
+lcthw\list.c(8,7): warning :        ^~~~~~~~~~~
+  4,
+  
+  In function 'main_buffer':
+main_buffer.c(30,29): warning : passing argument 2 of 'Ringbuf_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+main_buffer.c(30,29): warning :   Ringbuf_Init(&test_buffer, &data_store, element_size, element_count);
+main_buffer.c(30,29): warning :                              ^~~~~~~~~~~
+  
+ringbuf.h(71,10): message : expected 'float *' but argument is of type 'float (*)[64]'
+ringbuf.h(71,10): message :    float* data,     /* data block or array of data */
+ringbuf.h(71,10): message :    ~~~~~~~^~~~
+main_buffer.c(36,15): warning : conversion from 'double' to 'float' changes value from '1.1000000000000001e+0' to '1.10000002e+0f' [-Wfloat-conversion]
+main_buffer.c(36,15): warning :   float data = 1.1;
+main_buffer.c(36,15): warning :                ^~~
+main_buffer.c(38,9): warning : conversion from 'double' to 'float' changes value from '1.2e+0' to '1.20000005e+0f' [-Wfloat-conversion]
+main_buffer.c(38,9): warning :   data = 1.2;
+main_buffer.c(38,9): warning :          ^~~
+main_buffer.c(18,7): warning : variable 'status' set but not used [-Wunused-but-set-variable]
+main_buffer.c(18,7): warning :   bool status;
+main_buffer.c(18,7): warning :        ^~~~~~
+main_buffer.c(15,11): warning : unused variable 'data_index' [-Wunused-variable]
+main_buffer.c(15,11): warning :   unsigned data_index;
+main_buffer.c(15,11): warning :            ^~~~~~~~~~
+lcthw/list.h(19,1): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+lcthw/list.h(19,1): warning :  List *List_create();
+lcthw/list.h(19,1): warning :  ^~~~
+main.c(31,7): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+main.c(31,7): warning :  List* create_words()
+main.c(31,7): warning :        ^~~~~~~~~~~~
+main.c(52,6): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+main.c(52,6): warning :  void list()
+main.c(52,6): warning :       ^~~~
+  In function 'list':
+main.c(77,15): warning : conversion from 'double' to 'float' may change value [-Wfloat-conversion]
+main.c(77,15): warning :    float val = entry->data;
+main.c(77,15): warning :                ^~~~~
+  In function 'main':
+main.c(186,12): warning : unused variable 'run_time' [-Wunused-variable]
+main.c(186,12): warning :   int    i, run_time = 30;  //default to 30 second run time
+main.c(186,12): warning :             ^~~~~~~~
+ringbuf-test.c(70,1): warning : multi-line comment [-Wcomment]
+ringbuf-test.c(70,1): warning :  //#define END_TEST(test_num) \
+ringbuf-test.c(70,1): warning :  ^
+lcthw\list.h(19,1): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+lcthw\list.h(19,1): warning :  List *List_create();
+lcthw\list.h(19,1): warning :  ^~~~
+main_buffer.c(13,9): warning : variable 'test_data' set but not used [-Wunused-but-set-variable]
+main_buffer.c(13,9): warning :   float* test_data;
+main_buffer.c(13,9): warning :          ^~~~~~~~~
+lcthw\list.c(164,18): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+lcthw\list.c(164,18): warning :  static ListNode *List_createNode()
+lcthw\list.c(164,18): warning :                   ^~~~~~~~~~~~~~~
+main.c(186,9): warning : unused variable 'i' [-Wunused-variable]
+main.c(186,9): warning :   int    i, run_time = 30;  //default to 30 second run time
+main.c(186,9): warning :          ^
+  Azure Sphere Utility version 19.10.6.8215
+  Copyright (C) Microsoft Corporation. All rights reserved.
+  
+  Start time (UTC): Sunday, 24 November 2019 13:02:20
+  verbose: Creating image package.
+  verbose: Azure Sphere application image package written.
+  verbose: Appending metadata.
+  verbose: Wrote metadata:
+    Section: Identity
+      Image Type:           Application
+      Component ID:         2171b644-0e27-4611-bdaa-d1f42a49ee2b
+      Image ID:             f16e9867-635e-4f05-972e-b45d51334d46
+    Section: Signature
+      Signing Type:         ECDsa256
+      Cert:                 a8d5cc6958f48710140d7a26160fc1cfc31f5df0
+    Section: Debug
+      Image Name:           AzureSphereBlink1
+      Built On (UTC):       11/24/2019 1:02:20 PM
+      Built On (Local):     11/24/2019 7:02:20 AM
+    Section: Temporary Image
+      Remove image at boot: False
+      Under development:    True
+    Section: ABI Depends
+      Depends on:           ApplicationRuntime, version 3
+  
+  verbose: Packaging completed successfully.
+  verbose: Output file is at: C:\!Code\Github\bunny-sense\Software\AnomalyDetection\AzureSphereBlink1\bin\ARM\Debug\AzureSphereBlink1.imagepackage
+  Command completed in 00:00:01.2649544.

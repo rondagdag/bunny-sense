@@ -1,0 +1,121 @@
+﻿  
+build_options.h(15,2): warning : #warning "Building application for no cloud connectivity" [-Wcpp]
+build_options.h(15,2): warning :  #warning "Building application for no cloud connectivity"
+build_options.h(15,2): warning :   ^~~~~~~
+main.c(54,1): warning : data definition has no type or storage class
+main.c(54,1): warning :  element_size = 1; //sizeof(data_element16),
+main.c(54,1): warning :  ^~~~~~~~~~~~
+main.c(54,1): warning : type defaults to 'int' in declaration of 'element_size' [-Wimplicit-int]
+main.c(55,1): warning : data definition has no type or storage class
+main.c(55,1): warning :  element_count = 1000;
+main.c(55,1): warning :  ^~~~~~~~~~~~~
+main.c(55,1): warning : type defaults to 'int' in declaration of 'element_count' [-Wimplicit-int]
+  In function 'TimerEventHandler':
+main.c(245,16): warning : unused variable 'lps22hhReg' [-Wunused-variable]
+main.c(245,16): warning :   lps22hh_reg_t lps22hhReg;
+main.c(245,16): warning :                 ^~~~~~~~~~
+main.c(244,10): warning : unused variable 'reg' [-Wunused-variable]
+main.c(244,10): warning :   uint8_t reg;
+main.c(244,10): warning :           ^~~
+  In function 'SensorTimerEventHandler':
+main.c(378,86): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+main.c(378,86): warning :    angular_rate_dps[0] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[0] - raw_angular_rate_calibration.i16bit[0])) / 1000.0;
+main.c(378,86): warning :                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(378,25): warning : conversion from 'double' to 'float' may change value [-Wfloat-conversion]
+main.c(378,25): warning :    angular_rate_dps[0] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[0] - raw_angular_rate_calibration.i16bit[0])) / 1000.0;
+main.c(378,25): warning :                          ^
+main.c(379,86): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+main.c(379,86): warning :    angular_rate_dps[1] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[1] - raw_angular_rate_calibration.i16bit[1])) / 1000.0;
+main.c(379,86): warning :                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(379,25): warning : conversion from 'double' to 'float' may change value [-Wfloat-conversion]
+main.c(379,25): warning :    angular_rate_dps[1] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[1] - raw_angular_rate_calibration.i16bit[1])) / 1000.0;
+main.c(379,25): warning :                          ^
+main.c(380,86): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+main.c(380,86): warning :    angular_rate_dps[2] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[2] - raw_angular_rate_calibration.i16bit[2])) / 1000.0;
+main.c(380,86): warning :                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(380,25): warning : conversion from 'double' to 'float' may change value [-Wfloat-conversion]
+main.c(380,25): warning :    angular_rate_dps[2] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[2] - raw_angular_rate_calibration.i16bit[2])) / 1000.0;
+main.c(380,25): warning :                          ^
+main.c(410,59): warning : conversion to 'uint32_t' {aka 'unsigned int'} from 'int32_t' {aka 'int'} may change the sign of the result [-Wsign-conversion]
+main.c(410,59): warning :    pressure_hPa = lps22hh_from_lsb_to_hpa(data_raw_pressure.i32bit);
+main.c(410,59): warning :                                           ~~~~~~~~~~~~~~~~~^~~~~~~
+  In function 'main':
+main.c(480,29): warning : passing argument 2 of 'Ringbuf_Init' from incompatible pointer type [-Wincompatible-pointer-types]
+main.c(480,29): warning :   Ringbuf_Init(&data_buffer, &data_store, element_size, element_count);
+main.c(480,29): warning :                              ^~~~~~~~~~~
+  
+ringbuf.h(71,10): message : expected 'float *' but argument is of type 'float (*)[1000]'
+ringbuf.h(71,10): message :    float* data,     /* data block or array of data */
+ringbuf.h(71,10): message :    ~~~~~~~^~~~
+main.c(480,42): warning : conversion to 'unsigned int' from 'int' may change the sign of the result [-Wsign-conversion]
+main.c(480,42): warning :   Ringbuf_Init(&data_buffer, &data_store, element_size, element_count);
+main.c(480,42): warning :                                           ^~~~~~~~~~~~
+main.c(480,56): warning : conversion to 'unsigned int' from 'int' may change the sign of the result [-Wsign-conversion]
+main.c(480,56): warning :   Ringbuf_Init(&data_buffer, &data_store, element_size, element_count);
+main.c(480,56): warning :                                                         ^~~~~~~~~~~~~
+  
+main.c(69,30): warning : 'LoopInterval' defined but not used [-Wunused-const-variable=]
+main.c(69,30): warning :  static const struct timespec LoopInterval = { 0, 200000000 };
+main.c(69,30): warning :                               ^~~~~~~~~~~~
+main.c(59,12): warning : 'accelTimerFd' defined but not used [-Wunused-variable]
+main.c(59,12): warning :  static int accelTimerFd = -1;
+main.c(59,12): warning :             ^~~~~~~~~~~~
+main.c(58,24): warning : 'rst' defined but not used [-Wunused-variable]
+main.c(58,24): warning :  static uint8_t whoamI, rst;
+main.c(58,24): warning :                         ^~~
+  
+build_options.h(15,2): warning : #warning "Building application for no cloud connectivity" [-Wcpp]
+build_options.h(15,2): warning :  #warning "Building application for no cloud connectivity"
+build_options.h(15,2): warning :   ^~~~~~~
+azure_iot_utilities.c(632,13): warning : 'hubConnectionStatusCallback' defined but not used [-Wunused-function]
+azure_iot_utilities.c(632,13): warning :  static void hubConnectionStatusCallback(IOTHUB_CLIENT_CONNECTION_STATUS result,
+azure_iot_utilities.c(632,13): warning :              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+azure_iot_utilities.c(578,13): warning : 'twinCallback' defined but not used [-Wunused-function]
+azure_iot_utilities.c(578,13): warning :  static void twinCallback(DEVICE_TWIN_UPDATE_STATE updateState, const unsigned char *payLoad,
+azure_iot_utilities.c(578,13): warning :              ^~~~~~~~~~~~
+azure_iot_utilities.c(543,12): warning : 'directMethodCallback' defined but not used [-Wunused-function]
+azure_iot_utilities.c(543,12): warning :  static int directMethodCallback(const char *methodName, const unsigned char *payload, size_t size,
+azure_iot_utilities.c(543,12): warning :             ^~~~~~~~~~~~~~~~~~~~
+azure_iot_utilities.c(488,41): warning : 'receiveMessageCallback' defined but not used [-Wunused-function]
+azure_iot_utilities.c(488,41): warning :  static IOTHUBMESSAGE_DISPOSITION_RESULT receiveMessageCallback(IOTHUB_MESSAGE_HANDLE message,
+azure_iot_utilities.c(488,41): warning :                                          ^~~~~~~~~~~~~~~~~~~~~~
+azure_iot_utilities.c(81,19): warning : 'azureIoTCertificatesX' defined but not used [-Wunused-const-variable=]
+azure_iot_utilities.c(81,19): warning :  static const char azureIoTCertificatesX[] =
+azure_iot_utilities.c(81,19): warning :                    ^~~~~~~~~~~~~~~~~~~~~
+azure_iot_utilities.c(76,12): warning : 'keepalivePeriodSeconds' defined but not used [-Wunused-variable]
+azure_iot_utilities.c(76,12): warning :  static int keepalivePeriodSeconds = 20;
+azure_iot_utilities.c(76,12): warning :             ^~~~~~~~~~~~~~~~~~~~~~
+azure_iot_utilities.c(34,21): warning : 'retryTimeoutSeconds' defined but not used [-Wunused-const-variable=]
+azure_iot_utilities.c(34,21): warning :  static const size_t retryTimeoutSeconds = 0;
+azure_iot_utilities.c(34,21): warning :                      ^~~~~~~~~~~~~~~~~~~
+main.c(58,16): warning : 'whoamI' defined but not used [-Wunused-variable]
+main.c(58,16): warning :  static uint8_t whoamI, rst;
+main.c(58,16): warning :                 ^~~~~~
+  Azure Sphere Utility version 19.5.4.53731
+  Copyright (C) Microsoft Corporation. All rights reserved.
+   
+  Start time (UTC): Saturday, 21 September 2019 22:27:58 
+  verbose: Creating image package. 
+  verbose: Azure Sphere application image package written. 
+  verbose: Appending metadata. 
+  verbose: Wrote metadata:
+    Section: Identity
+      Image Type:           Application
+      Component ID:         011b3254-6b4e-4af1-bc81-22e7f677f4bf
+      Image ID:             de0dfa48-7eab-40de-ba28-8496735ed532
+    Section: Signature
+      Signing Type:         ECDsa256
+      Cert:                 a8d5cc6958f48710140d7a26160fc1cfc31f5df0
+    Section: Debug
+      Image Name:           HTTPS_Curl_Easy
+      Built On (UTC):       9/21/2019 10:27:59 PM
+      Built On (Local):     9/21/2019 5:27:59 PM
+    Section: Temporary Image
+      Remove image at boot: False
+      Under development:    True
+    Section: ABI Depends
+      Depends on:           ApplicationRuntime, version 2
+   
+  verbose: Packaging completed successfully. 
+  verbose: Output file is at: C:\!Code\azuresphere\sphere_anomaly_detection\Software\HTTPS_Curl_Easy\HTTPS_Curl_Easy\bin\ARM\Debug\HTTPS_Curl_Easy.imagepackage 
+  Command completed successfully in 00:00:00.6555068. 
