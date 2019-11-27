@@ -3,4 +3,7 @@
   <PropertyGroup>
     <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <DebuggerFlavor>AzureSphereDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

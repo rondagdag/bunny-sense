@@ -1,14 +1,4 @@
-﻿/* Copyright (c) Microsoft Corporation. All rights reserved.
-   Licensed under the MIT License. */
-
-// This sample C application for Azure Sphere periodically downloads and outputs the index web page
-// at example.com, by using cURL over a secure HTTPS connection.
-// It uses the cURL 'easy' API which is a synchronous (blocking) API.
-//
-// It uses the following Azure Sphere libraries:
-// - log (messages shown in Visual Studio's Device Output window during debugging);
-// - storage (device storage interaction);
-// - curl (URL transfer library).
+﻿/* Copyright (c) Ron Dagdag */
 
 #include <errno.h>
 #include <stdbool.h>
@@ -648,7 +638,7 @@ static int InitHandlers(void)
 		return -1;
 	}
 
-	struct timespec sensorTimerSpan = { 2, 0 };
+	struct timespec sensorTimerSpan = { 1, 0 };
 	sensorTimerFd =
 		CreateTimerFdAndAddToEpoll(epollFd, &sensorTimerSpan, &sensorTimerEventData, EPOLLIN);
 	if (sensorTimerFd < 0) {
@@ -656,7 +646,7 @@ static int InitHandlers(void)
 	}
 
     // Issue an HTTPS request at the specified period.
-    struct timespec listTimeSpan = { 2, 0};
+    struct timespec listTimeSpan = { 1, 0};
 	listTimerFd =
         CreateTimerFdAndAddToEpoll(epollFd, &listTimeSpan, &listTimerEventData, EPOLLIN);
     if (listTimerFd < 0) {
@@ -664,7 +654,7 @@ static int InitHandlers(void)
     }
 
 	// Issue an HTTPS request at the specified period.
-	struct timespec webpagedownloadSpan = { 4, 0 }; // 5 seconds
+	struct timespec webpagedownloadSpan = { 1, 0 }; // 2 seconds
 	webpageDownloadTimerFd =
 		CreateTimerFdAndAddToEpoll(epollFd, &webpagedownloadSpan, &timerEventData, EPOLLIN);
 	if (webpageDownloadTimerFd < 0) {
@@ -721,9 +711,20 @@ int main(int argc, char *argv[])
 {
     //Log_Debug("cURL easy interface based application starting.\n");
     //Log_Debug("This sample periodically attempts to download a webpage, using curl's 'easy' API.");
-	
+	sleep(30); //waiting for wifi
+
+	//init();
 	rptr = open_relay(state, init);
 	sleep(1);
+
+	bool isNetworkingReady = false;
+	if ((Networking_IsNetworkingReady(&isNetworkingReady) < 0) || !isNetworkingReady) {
+		Log_Debug("\nNot doing download because network is not up.\n");
+
+		relaystate(rptr, relay1_set);
+		sleep(1);
+	}
+
 
 	relaystate(rptr, relay1_set);
 	sleep(1);
@@ -748,6 +749,7 @@ int main(int argc, char *argv[])
 	// Ringbuf_Init(&data_buffer, &data_store, element_size, element_count);
 	entries = List_create();
 
+	
     if (InitHandlers() != 0) {
         terminationRequired = true;
     } else {

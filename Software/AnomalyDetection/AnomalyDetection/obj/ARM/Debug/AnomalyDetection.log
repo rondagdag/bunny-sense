@@ -1,8 +1,91 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (obj\ARM\Debug\) contains files shared from another project (HTTPS_Curl_Easy.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  
+build_options.h(15,2): warning : #warning "Building application for no cloud connectivity" [-Wcpp]
+build_options.h(15,2): warning :  #warning "Building application for no cloud connectivity"
+build_options.h(15,2): warning :   ^~~~~~~
+  
+lcthw/list.h(19,1): warning : function declaration isn't a prototype [-Wstrict-prototypes]
+lcthw/list.h(19,1): warning :  List *List_create();
+lcthw/list.h(19,1): warning :  ^~~~
+main.c(65,1): warning : data definition has no type or storage class
+main.c(65,1): warning :  element_size = 1; //sizeof(data_element16),
+main.c(65,1): warning :  ^~~~~~~~~~~~
+main.c(65,1): warning : type defaults to 'int' in declaration of 'element_size' [-Wimplicit-int]
+main.c(66,1): warning : data definition has no type or storage class
+main.c(66,1): warning :  element_count = 1000;
+main.c(66,1): warning :  ^~~~~~~~~~~~~
+main.c(66,1): warning : type defaults to 'int' in declaration of 'element_count' [-Wimplicit-int]
+  In function 'dround':
+main.c(396,24): warning : conversion to 'size_t' {aka 'unsigned int'} from 'int' may change the sign of the result [-Wsign-conversion]
+main.c(396,24): warning :   char* buffer = malloc(charsNeeded);
+main.c(396,24): warning :                         ^~~~~~~~~~~
+main.c(397,19): warning : conversion to 'size_t' {aka 'unsigned int'} from 'int' may change the sign of the result [-Wsign-conversion]
+main.c(397,19): warning :   snprintf(buffer, charsNeeded, "%.*f", dp, val);
+main.c(397,19): warning :                    ^~~~~~~~~~~
+  In function 'TimerEventHandler':
+main.c(409,16): warning : unused variable 'lps22hhReg' [-Wunused-variable]
+main.c(409,16): warning :   lps22hh_reg_t lps22hhReg;
+main.c(409,16): warning :                 ^~~~~~~~~~
+main.c(408,10): warning : unused variable 'reg' [-Wunused-variable]
+main.c(408,10): warning :   uint8_t reg;
+main.c(408,10): warning :           ^~~
+  In function 'ListTimerEventHandler':
+main.c(497,20): warning : conversion to 'long unsigned int' from 'time_t' {aka 'long int'} may change the sign of the result [-Wsign-conversion]
+main.c(497,20): warning :   refTime = refTime + minute;
+main.c(497,20): warning :                     ^
+main.c(497,12): warning : conversion to 'time_t' {aka 'long int'} from 'long unsigned int' may change the sign of the result [-Wsign-conversion]
+main.c(497,12): warning :   refTime = refTime + minute;
+main.c(497,12): warning :             ^~~~~~~
+  In function 'SensorTimerEventHandler':
+main.c(559,86): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+main.c(559,86): warning :    angular_rate_dps[0] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[0] - raw_angular_rate_calibration.i16bit[0])) / 1000.0;
+main.c(559,86): warning :                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(559,25): warning : conversion from 'double' to 'float' may change value [-Wfloat-conversion]
+main.c(559,25): warning :    angular_rate_dps[0] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[0] - raw_angular_rate_calibration.i16bit[0])) / 1000.0;
+main.c(559,25): warning :                          ^
+main.c(560,86): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+main.c(560,86): warning :    angular_rate_dps[1] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[1] - raw_angular_rate_calibration.i16bit[1])) / 1000.0;
+main.c(560,86): warning :                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(560,25): warning : conversion from 'double' to 'float' may change value [-Wfloat-conversion]
+main.c(560,25): warning :    angular_rate_dps[1] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[1] - raw_angular_rate_calibration.i16bit[1])) / 1000.0;
+main.c(560,25): warning :                          ^
+main.c(561,86): warning : conversion from 'int' to 'int16_t' {aka 'short int'} may change value [-Wconversion]
+main.c(561,86): warning :    angular_rate_dps[2] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[2] - raw_angular_rate_calibration.i16bit[2])) / 1000.0;
+main.c(561,86): warning :                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+main.c(561,25): warning : conversion from 'double' to 'float' may change value [-Wfloat-conversion]
+main.c(561,25): warning :    angular_rate_dps[2] = (lsm6dso_from_fs2000_to_mdps(data_raw_angular_rate.i16bit[2] - raw_angular_rate_calibration.i16bit[2])) / 1000.0;
+main.c(561,25): warning :                          ^
+main.c(606,59): warning : conversion to 'uint32_t' {aka 'unsigned int'} from 'int32_t' {aka 'int'} may change the sign of the result [-Wsign-conversion]
+main.c(606,59): warning :    pressure_hPa = lps22hh_from_lsb_to_hpa(data_raw_pressure.i32bit);
+main.c(606,59): warning :                                           ~~~~~~~~~~~~~~~~~^~~~~~~
+  In function 'main':
+main.c(745,20): warning : conversion to 'long unsigned int' from 'time_t' {aka 'long int'} may change the sign of the result [-Wsign-conversion]
+main.c(745,20): warning :   refTime = refTime + (minute);
+main.c(745,20): warning :                     ^
+main.c(745,12): warning : conversion to 'time_t' {aka 'long int'} from 'long unsigned int' may change the sign of the result [-Wsign-conversion]
+main.c(745,12): warning :   refTime = refTime + (minute);
+main.c(745,12): warning :             ^~~~~~~
+  
+main.c(80,30): warning : 'LoopInterval' defined but not used [-Wunused-const-variable=]
+main.c(80,30): warning :  static const struct timespec LoopInterval = { 0, 200000000 };
+main.c(80,30): warning :                               ^~~~~~~~~~~~
+main.c(70,12): warning : 'accelTimerFd' defined but not used [-Wunused-variable]
+main.c(70,12): warning :  static int accelTimerFd = -1;
+main.c(70,12): warning :             ^~~~~~~~~~~~
+main.c(69,24): warning : 'rst' defined but not used [-Wunused-variable]
+main.c(69,24): warning :  static uint8_t whoamI, rst;
+main.c(69,24): warning :                         ^~~
+main.c(69,16): warning : 'whoamI' defined but not used [-Wunused-variable]
+main.c(69,16): warning :  static uint8_t whoamI, rst;
+main.c(69,16): warning :                 ^~~~~~
+  
+id.h(3,20): warning : 'key' defined but not used [-Wunused-variable]
+id.h(3,20): warning :  static const char* key = "931620242ecc43b6b95bce8a35728753";
+id.h(3,20): warning :                     ^~~
   Azure Sphere Utility version 19.10.6.8215
   Copyright (C) Microsoft Corporation. All rights reserved.
   
-  Start time (UTC): Sunday, 24 November 2019 13:05:28
+  Start time (UTC): Tuesday, 26 November 2019 23:06:37
   verbose: Creating image package.
   verbose: Azure Sphere application image package written.
   verbose: Appending metadata.
@@ -10,14 +93,14 @@
     Section: Identity
       Image Type:           Application
       Component ID:         011b3254-6b4e-4af1-bc81-22e7f677f4bf
-      Image ID:             5ffdb6df-3260-4bb0-bf3a-bd8a39d89ca6
+      Image ID:             e3ee3c3f-e755-4bca-88bd-9857fa878e7e
     Section: Signature
       Signing Type:         ECDsa256
       Cert:                 a8d5cc6958f48710140d7a26160fc1cfc31f5df0
     Section: Debug
       Image Name:           Anomaly Detection
-      Built On (UTC):       11/24/2019 1:05:29 PM
-      Built On (Local):     11/24/2019 7:05:29 AM
+      Built On (UTC):       11/26/2019 11:06:37 PM
+      Built On (Local):     11/26/2019 5:06:37 PM
     Section: Temporary Image
       Remove image at boot: False
       Under development:    True
@@ -26,4 +109,4 @@
   
   verbose: Packaging completed successfully.
   verbose: Output file is at: C:\!Code\Github\bunny-sense\Software\AnomalyDetection\AnomalyDetection\bin\ARM\Debug\AnomalyDetection.imagepackage
-  Command completed in 00:00:00.6498282.
+  Command completed in 00:00:00.5755459.
